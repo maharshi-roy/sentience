@@ -30,12 +30,12 @@ def index(request):
 def sentiment(request):
 	try:
 		sentence=request.POST['feed']
-		
+
 		words=preprocess(sentence)
 
-		classifier=getPickled('data\classifier.pickle')
-		mostCommon=getPickled('data\words.pickle')
-		
+		classifier=getPickled('data/classifier.pickle')
+		mostCommon=getPickled('data/words.pickle')
+
 		featureSet={}
 		for w in mostCommon:
 			featureSet[w]=(w in words)
@@ -48,9 +48,9 @@ def sentiment(request):
 		return HttpResponse('<h1>{}</h1>'.format('Post Data not Recieved'))
 
 def getPickled(fileName):
-	modulePath = os.path.dirname(__file__)  # get current directory
-	filePath = os.path.join(modulePath, fileName)
-	with open(filePath, 'rb') as f:
+	mod = os.path.dirname(__file__)  # get current directory
+	fPath = os.path.join(mod,fileName)
+	with open(fPath, 'rb') as f:
 		return pickle.load(f)
 
 def preprocess(sentence):

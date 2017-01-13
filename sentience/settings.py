@@ -25,7 +25,7 @@ SECRET_KEY = '1#%u8w#8%*3jmi^c=f(9#s_qqpo9*kl^@0)^spgxoyfiho^=89'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','strategistroy.pythonanywhere.com']
 
 
 # Application definition
