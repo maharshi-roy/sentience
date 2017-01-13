@@ -25,7 +25,7 @@ import __main__
 sys.modules['__main__']=voteclf
 
 def index(request):
-	return render(request, 'home.html')
+	return render(request, 'sentiment/home.html')
 
 def sentiment(request):
 	try:
