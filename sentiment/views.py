@@ -41,8 +41,9 @@ def sentiment(request):
 			featureSet[w]=(w in words)
 
 		sentiment=str(classifier.classify(featureSet))
+		confidence=100*round(classifier.confidence(featureSet),4)
 
-		return HttpResponse('<h1>{}</h1>'.format(sentiment))
+		return render(request, 'sentiment/result.html', {'sentence': sentence, 'sentiment': sentiment, 'confidence': confidence})
 
 	except KeyError as e:
 		return HttpResponse('<h1>{}</h1>'.format('Post Data not Recieved'))

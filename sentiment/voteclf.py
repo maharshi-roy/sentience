@@ -38,7 +38,7 @@ class VoteClassifier(SklearnClassifier):
 		for clf in self.classifiers:
 			votes.append(clf.classify(featureSet))
 		countMaj=votes.count(self.mode(votes))
-		return (countMaj/len(votes)*1.0)
+		return (countMaj*1.0/len(votes))
 
 	#Python 2.7 doesn't have a built-in statistics mode, so Counter is used
 	def mode(self,votes):                    
