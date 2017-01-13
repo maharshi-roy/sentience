@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sentiment</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #64B5F6;">
+			<div class="container">
+				<div class="row" style="color: white;">
+					<h1 class="text-center">Sentience Sentiment Platform</h1>
+				</div>
+			</div>
+		</nav>
+		<div class="container" style="margin-top:100px;">
+			<div class="jumbotron" style="background-color: #00E676;">
+				<h2 style="color: #283593;"><strong>What is Sentiment Analysis?</strong></h2>
+				<div class="row">
+					<div class="col-md-11" style="color: #424242; margin-top: 10px;">
+						<p>Sentiment analysis refers to the use of natural language processing to identify and extract subjective information. Sentiment analysis is widely applied to reviews and social media for a variety of applications, ranging from marketing to customer service.</p>
+						<p>Generally speaking, sentiment analysis aims to determine the <strong>attitude</strong> of a speaker or a writer with respect to some topic.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<form action="/sentiment/result/" role="form" id="contact-form" class="contact-form" method="post">
+					{% csrf_token %}
+                  	<div class="row">
+                  		<div class="col-md-10 col-md-offset-1">
+	                  		<div class="form-group">
+	                            <textarea class="form-control textarea" rows="5" name="feed" id="Message" placeholder="Enter text to find sentiment" style="font-size: 15px;"></textarea>
+	                  		</div>
+                  		</div>
+                    </div>
+                    <div class="row">
+	                    <div class="col-md-11">
+	                       	<button type="submit" class="btn btn-success pull-right" name="go">Get Sentiment</button>
+	                  </div>
+                  </div>
+                </form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
